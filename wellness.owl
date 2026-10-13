@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://wellness-coach.example/onto.owl"
+         xmlns="http://wellness-coach.example/onto.owl#">
+
+<owl:Ontology rdf:about="http://wellness-coach.example/onto.owl"/>
+
+<owl:ObjectProperty rdf:about="#improves">
+  <rdfs:domain rdf:resource="#Action"/>
+  <rdfs:range rdf:resource="#Metric"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#advice">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Action"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#time_cost_min">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Action"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#effort">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Action"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#day_type">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Action"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#needs_anchor">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Action"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#increases_intensity">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Action"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Metric">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Action">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#weeknight_sleep">
+  <rdf:type rdf:resource="#Metric"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sleep_swing">
+  <rdf:type rdf:resource="#Metric"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#daily_steps">
+  <rdf:type rdf:resource="#Metric"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#weekday_steps">
+  <rdf:type rdf:resource="#Metric"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#weekend_steps">
+  <rdf:type rdf:resource="#Metric"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#A01">
+  <rdf:type rdf:resource="#Action"/>
+  <improves rdf:resource="#weeknight_sleep"/>
+  <advice rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Move your weeknight bedtime about 15 minutes earlier.</advice>
+  <time_cost_min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</time_cost_min>
+  <effort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low</effort>
+  <day_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weekday</day_type>
+  <needs_anchor rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</needs_anchor>
+  <increases_intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</increases_intensity>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#A02">
+  <rdf:type rdf:resource="#Action"/>
+  <improves rdf:resource="#weeknight_sleep"/>
+  <advice rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Start winding down 20 minutes before your usual weeknight bedtime: screens down, lights low.</advice>
+  <time_cost_min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</time_cost_min>
+  <effort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low</effort>
+  <day_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weekday</day_type>
+  <needs_anchor rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</needs_anchor>
+  <increases_intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</increases_intensity>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#A03">
+  <rdf:type rdf:resource="#Action"/>
+  <improves rdf:resource="#sleep_swing"/>
+  <advice rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Keep your weekend wake-up within about an hour of your weekday wake-up.</advice>
+  <time_cost_min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</time_cost_min>
+  <effort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low</effort>
+  <day_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weekend</day_type>
+  <needs_anchor rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</needs_anchor>
+  <increases_intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</increases_intensity>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#A04">
+  <rdf:type rdf:resource="#Action"/>
+  <improves rdf:resource="#sleep_swing"/>
+  <improves rdf:resource="#weeknight_sleep"/>
+  <advice rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Add 20 minutes of sleep to a few weeknights instead of one big weekend lie-in.</advice>
+  <time_cost_min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</time_cost_min>
+  <effort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low</effort>
+  <day_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weekday</day_type>
+  <needs_anchor rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</needs_anchor>
+  <increases_intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</increases_intensity>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#A05">
+  <rdf:type rdf:resource="#Action"/>
+  <improves rdf:resource="#daily_steps"/>
+  <improves rdf:resource="#weekday_steps"/>
+  <advice rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Extend a walk you already take by 5 to 10 minutes.</advice>
+  <time_cost_min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</time_cost_min>
+  <effort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low</effort>
+  <day_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weekday</day_type>
+  <needs_anchor rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</needs_anchor>
+  <increases_intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</increases_intensity>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#A06">
+  <rdf:type rdf:resource="#Action"/>
+  <improves rdf:resource="#daily_steps"/>
+  <advice rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Take a 10-minute walk right after a meal you already eat at a regular time.</advice>
+  <time_cost_min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</time_cost_min>
+  <effort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low</effort>
+  <day_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">any</day_type>
+  <needs_anchor rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</needs_anchor>
+  <increases_intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</increases_intensity>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#A07">
+  <rdf:type rdf:resource="#Action"/>
+  <improves rdf:resource="#daily_steps"/>
+  <advice rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Take phone calls or listen to a podcast while walking.</advice>
+  <time_cost_min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</time_cost_min>
+  <effort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low</effort>
+  <day_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">any</day_type>
+  <needs_anchor rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</needs_anchor>
+  <increases_intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</increases_intensity>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#A08">
+  <rdf:type rdf:resource="#Action"/>
+  <improves rdf:resource="#weekend_steps"/>
+  <advice rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pick one weekend slot, even 15 minutes, and pair a walk with something you already do, like errands or coffee.</advice>
+  <time_cost_min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</time_cost_min>
+  <effort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low</effort>
+  <day_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weekend</day_type>
+  <needs_anchor rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</needs_anchor>
+  <increases_intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</increases_intensity>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#A09">
+  <rdf:type rdf:resource="#Action"/>
+  <improves rdf:resource="#daily_steps"/>
+  <advice rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Walk or take the stairs for one short trip you would normally drive or take the elevator for.</advice>
+  <time_cost_min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</time_cost_min>
+  <effort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low</effort>
+  <day_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">any</day_type>
+  <needs_anchor rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</needs_anchor>
+  <increases_intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</increases_intensity>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#A10">
+  <rdf:type rdf:resource="#Action"/>
+  <improves rdf:resource="#daily_steps"/>
+  <advice rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Add a brisk-pace stretch to a walk you already take.</advice>
+  <time_cost_min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</time_cost_min>
+  <effort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">moderate</effort>
+  <day_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">any</day_type>
+  <needs_anchor rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</needs_anchor>
+  <increases_intensity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</increases_intensity>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
